@@ -66,7 +66,7 @@ public abstract class CassandraStore {
 			executeQuery(query, objects);
 			logTransactionEvent(CassandraStoreParams.CREATE.name(), idValue, request);
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			throw new ServerException(CassandraConnectorStoreParam.ERR_SERVER_ERROR.name(),
 					"Error while inserting record", e);
 		}
@@ -91,7 +91,7 @@ public abstract class CassandraStore {
 			executeQuery(updateQuery, objects);
 			logTransactionEvent(CassandraStoreParams.UPDATE.name(), idValue, request);
 		} catch (Exception e) {
-			e.printStackTrace();
+		//	e.printStackTrace();
 			throw new ServerException(CassandraConnectorStoreParam.ERR_SERVER_ERROR.name(),
 					"Error while updating record for id : " + idValue, e);
 		}
