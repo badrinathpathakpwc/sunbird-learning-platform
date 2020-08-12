@@ -23,7 +23,7 @@ public class LogAsyncGraphEvent {
 				if (StringUtils.isNotBlank(jsonMessage))
 					graphEventLogger.info(jsonMessage);
 			}catch(Exception e){
-				e.printStackTrace();
+			//	e.printStackTrace();
 			}
 		}
 	}
