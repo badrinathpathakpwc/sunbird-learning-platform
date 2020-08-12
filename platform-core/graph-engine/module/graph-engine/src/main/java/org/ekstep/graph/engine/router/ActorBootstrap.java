@@ -39,6 +39,9 @@ public class ActorBootstrap {
     static {
         try (InputStream inputStream = ActorBootstrap.class.getClassLoader().getResourceAsStream("actor-config.xml")) {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	    dbFactory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+	    dbFactory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+	    dbFactory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             document = dBuilder.parse(inputStream);
             document.getDocumentElement().normalize();
